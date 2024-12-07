@@ -1,0 +1,84 @@
+
+
+/* Font Family */
+@font-face {
+    font-family:hind_siliguri_bold ;
+    src: url('../assets/font/hind_siliguri_bold.woff');
+}
+@font-face {
+    font-family:hind_siliguri_medium ;
+    src: url('../assets/font/hind_siliguri_medium.woff');
+}
+@font-face {
+    font-family:hind_siliguri_regular ;
+    src: url('../assets/font/hind_siliguri_regular.woff');
+}
+@font-face {
+    font-family:hind_siliguri_semi_bold;
+    src: url('../assets/font/hind_siliguri_semi_bold.woff');
+}
+
+:root {
+    /* Color Palette */
+    --primary-color: #FFC000;
+    --background-color:#F9F9FA;
+    --black-color:#101828;
+    --secondary-color: ;
+    --accent-color: ;
+    --green-color:#006A4E;
+    --red-color:#F42A41;
+    --text-color: #101828;
+    --text-font-color:#FFFFFF;
+    /* Card */
+    --card-border-color:#FFC000;
+    --card-background-color:#fffbee;
+    --card-hover-bacground-color:#FFE699;
+    --card-calender-color:#ff8c4b;
+
+
+
+    /* Spacing */
+    --small-spacing: 8px;
+    --medium-spacing: 16px;
+    --large-spacing: 32px;
+
+    /* Typography */
+    --font-size-small:11px;
+    --font-size-card-caption:12px;
+    --font-size-base: 14px;
+    --font-size-regular: 16px;
+    --font-size-course-title:20px;
+    --font-size-category-title:26px;
+    --font-size-heading: 36px;
+
+
+    /* Border Radius */
+    --border-radius: 8px;
+
+    /* Shadows */
+    --box-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --box-shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    /* Transitions */
+    --transition-speed: 0.3s;
+    --transition-ease: ease-in-out;
+
+    /*Font Family*/
+    --font-regular:hind_siliguri_regular;
+    --font-medium: hind_siliguri_medium;
+    --font-bold: hind_siliguri_bold;
+    --font-semi-bold:hind_siliguri_semi_bold;
+}
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-regular);
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+

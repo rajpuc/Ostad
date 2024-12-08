@@ -38,9 +38,10 @@
 
 
     /* Spacing */
-    --small-spacing: 8px;
-    --medium-spacing: 16px;
-    --large-spacing: 32px;
+    --spacing-small: 8px;
+    --spacing-medium: 16px;
+    --spacing-large: 32px;
+
 
     /* Typography */
     --font-size-small:11px;
@@ -68,12 +69,12 @@
     --font-medium: hind_siliguri_medium;
     --font-bold: hind_siliguri_bold;
     --font-semi-bold:hind_siliguri_semi_bold;
+
 }
 *,*::after,*::before{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: var(--font-regular);
 }
 a{
     text-decoration: none;
@@ -81,4 +82,61 @@ a{
 li{
     list-style: none;
 }
+body{
+    font-family: var(--font-regular); 
+}
+.color{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transform: translate(50%,50%);
+}
+/* ------------Utilities-------------- */
+.container{
+    max-width: 1400px;
+    margin-inline: auto;
+}
 
+
+/* ----------------Media quaries-------------- */
+
+@media  (max-width: 1240px){
+    .color{
+        background-color: darkblue;
+      }
+}
+@media  (max-width: 1210px){
+    .color{
+        background-color: cyan;
+      }
+}
+@media  (max-width: 1160px){
+    .color{
+        background-color: chocolate;
+    }
+}
+@media  (max-width: 1024px){
+    .color{
+        background-color:aqua ;
+      }
+}
+@media  (max-width: 768px){
+    .color{
+        background-color:brown ;
+      }
+}
+@media  (max-width: 640px){
+    .color{
+        background-color: blue;
+    }
+}
+@media  (max-width: 400px){
+    .color{
+        background-color: yellow;
+      }
+}
+@media  (max-width: 372px){
+    .color{
+      background-color:green ;
+    }
+}

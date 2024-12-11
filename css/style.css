@@ -77,6 +77,7 @@
 }
 a{
     text-decoration: none;
+    cursor: pointer;
 }
 li{
     list-style: none;
@@ -209,22 +210,25 @@ body{
     width: 100%;
     height: 100%;
     border-radius: 4px;
-    background-image: conic-gradient(from var(--angle),#ffab00, #f04438, #20b486, #ffab00, #f04438, #20b486, #ffab00);
+    /* background-image: conic-gradient(from var(--angle),#ffab00, #f04438, #20b486, #ffab00, #f04438, #20b486, #ffab00); */
+    background-image: conic-gradient(#ffab00, #f04438, #20b486, #ffab00, #f04438, #20b486, #ffab00);
+    /* filter: hue-rotate(0); */
     z-index: -1;
     padding: 1px;
     top:50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50.2%,-50%);
     box-sizing: content-box;
     animation:.5s spin  linear infinite;
 }
 
 @keyframes spin {
     from{
-        --angle:0deg;
+        /* --angle:0deg; */
+        filter: hue-rotate(0);
     }
     to{
-        --angle:360deg;
+        filter:hue-rotate(1turn)
     }
 }
 .od-links{
@@ -305,30 +309,132 @@ body{
 }
 .ostad-header {
     background-color:#fff;
+    position: relative;
 }
-/* ----------------Media quaries-------------- */
 
-@media  (max-width: 1240px){
+
+/* -------------------Nav Profile Card ------------------ */
+
+
+.namebadge-container div img{
+    width: 12px;
+}
+.verify img,.class-join img{
+    width: 18px;
+}
+.navigate-btn-container img{
+    width: 19px;
+}
+.self-info-container .image-container{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--black-color);
+    color: #fff;
+    font-family: var(--font-semi-bold);
+    font-size: var(--font-size-base);
+}
+.details-container .namebadge-container .profile-name{
+    font-size: 18px;
+    font-family: var(--font-semi-bold);
+    color:var(--text-color);
+}
+.details-container .namebadge-container .badge{
+    border: 1px dashed #ad65fc;
+    color:#ad65fc;
+    border-radius: 4px;
+    display: flex;
+    align-items:center;
+    width: fit-content;
+    padding: 2px 4px;
+    font-size: 12px;
+}
+.details-container .namebadge-container{
+    display: flex;
+    gap:4px;
+    align-items: center;
+}
+.details-container .gmail{
+    font-size: var(--font-size-base);
+    color: #667085;
+}
+
+.self-info-container{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    background-color: var(--background-color);
+    padding:8px;
+    border-radius: 8px;
+    border: 1px solid #f3f4f7;
+}
+
+
+.verify-text,.class-join-text{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.verify,.class-join{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 4px;
+    background-color: #fff;
+    padding: 8px;
+}
+.verify-container{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: var(--background-color);
+    padding:12px;
+    border-radius: 8px;
+    border: 1px solid #f3f4f7;
+}
+.profile-button, .log-out-button{
+    display: flex;
+    width: 50%;
+    background-color: var(--background-color);
+    align-items: center;
+    justify-content: center;
+    gap:8px;
+    border-radius: 5px;
+    padding-block: 8px;
+    font-family: var(--font-semi-bold);
+    text-transform: uppercase;
+    font-size: var(--font-size-base);
+}
+
+.profile-button:hover,.log-out-button:hover,
+.class-join:hover,
+.verify:hover{
+    background-color: #eaecf0;
+    transition: all .5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.navigate-btn-container{
+    display: flex;
+    align-items: center;
+    gap:8px;
+    justify-content: space-between;
 
 }
-@media  (max-width: 1210px){
-
+.nav-profile-card{
+    width: 343px;
+    position: absolute;
+    background-color: #fff;
+    padding: 8px;
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    border-radius: 8px;
+    right: 10px;
+    top:calc(100% + 10px);
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px ;
 }
-@media  (max-width: 1160px){
-    
-}
-@media  (max-width: 1024px){
-
-}
-@media  (max-width: 768px){
-
-}
-@media  (max-width: 640px){
-
-}
-@media  (max-width: 400px){
-
-}
-@media  (max-width: 372px){
- 
+.profile-active{
+    display: flex;
 }

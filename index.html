@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./assets/icons/RemixIcon_Fonts_v4.5.0/fonts/remixicon.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
 </head>
 
 <body>
@@ -23,7 +24,7 @@
                         <span>Search course</span>
                     </div>
                     <div class="od-links flex-center">
-                        <div class="special">
+                        <div class="special" id="left-nav-special">
                             <a href="#" class="nav-font-styling ">
                                 <img src="./assets/images/font-image/auto-awesome.png" alt="">
                                 Special Offer
@@ -38,8 +39,8 @@
                         <div>
                             <a href="#" class="nav-font-styling">Blog</a>
                         </div>
-                        <div>
-                            <a href="#" class="with-img nav-font-styling">
+                        <div id="left-nav-download">
+                            <a href="#"  class="with-img nav-font-styling">
                                 <span>Download</span>
                                 <img src="./assets/images/font-image/arrow-down-s-line.svg" alt="">
                             </a>
@@ -74,7 +75,7 @@
                         </a>
                     </div>
                     <div>
-                        <a href="#" class="od-profile nav-font-styling">
+                        <a href="#" id="od-profile" class="od-profile nav-font-styling">
                             RP
                             <div>
                                 <img src="./assets/images/font-image/arrow-down-s-line.svg" alt="">
@@ -85,7 +86,52 @@
                 </div>
             </nav>
         </div>
+        <!-- Nav Profile Card  -->
+        <div id="profile-card" class="nav-profile-card">
+            <div class="self-info-container">
+                <a class="image-container">RP</a>
+                <div class="details-container">
+                    <div class="namebadge-container">
+                        <a class="profile-name">Rajesh Pal</a>
+                        <a href="">
+                            <div  class="badge">
+                                <img src="./assets/images/font-image/verified.svg" alt="">
+                                <p>Get Badge</p>
+                            </div>
+                        </a>
+                    </div>
+                    <a class="gmail">ajoypal.raj@gmail.com</a>
+                </div>
+            </div>
+            <div class="verify-container">
+                <a href="#" class="verify">
+                    <div class="verify-text">
+                        <img src="./assets/images/font-image/verifiedBlack.svg" alt="">
+                        <p>Get verified</p>
+                    </div>
+                    <img src="./assets/images/font-image/arrow-right-line.svg" alt="">
+                </a>
+                <a href="#" class="class-join">
+                    <div class="class-join-text">
+                        <img src="./assets/images/font-image/video-add-line.svg" alt="">
+                        <p>Go to class joining</p>
+                    </div>
+                    <img src="./assets/images/font-image/arrow-right-line.svg" alt="">                       
+                </a>
+            </div>
+            <div class="navigate-btn-container">
+                <a href="#" class="profile-button">
+                    <img src="./assets/images/font-image/account-circle-line.svg" alt="">
+                    <p>Profile</p>
+                </a>
+                <a href="#" class="log-out-button">
+                    <img src="./assets/images/font-image/logout-box-r-line.svg" alt="">
+                    <p>Log out</p>
+                </a>
+            </div>
+        </div>
     </header>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>

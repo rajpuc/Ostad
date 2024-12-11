@@ -1,0 +1,36 @@
+/* ----------------Media quaries-------------- */
+
+@media  (max-width: 1325px){
+    #left-nav-download{
+        display: none;
+    }
+}
+@media  (max-width: 1240px){
+    #left-nav-special a img{
+        display: none;
+    }
+    .special::after{
+        transform: translate(-50.2%,-48.7%);
+    }
+}
+@media  (max-width: 1210px){
+
+}
+@media  (max-width: 1160px){
+    
+}
+@media  (max-width: 1024px){
+
+}
+@media  (max-width: 768px){
+
+}
+@media  (max-width: 640px){
+
+}
+@media  (max-width: 400px){
+
+}
+@media  (max-width: 372px){
+ 
+}

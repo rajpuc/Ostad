@@ -1,8 +1,16 @@
 const odProfileBtn = document.querySelector("#od-profile");
 const profileCard = document.querySelector("#profile-card");
+const selfInfoContainer = document.querySelector(".self-info-container")
+const verify = document.querySelector(".verify");
+const classJoin = document.querySelector(".class-join");
+const navigateBtnContainer = document.querySelector(".navigate-btn-container");
 
 odProfileBtn.addEventListener("click",(e)=>{
     profileCard.classList.toggle("profile-active");
+    selfInfoContainer.classList.toggle("self-info-container-active");
+    verify.classList.toggle("verify-active");
+    classJoin.classList.toggle("verify-active");
+    navigateBtnContainer.classList.toggle("navigate-btn-container-active");
     // e.stopPropagation();
 });
 
@@ -20,5 +28,9 @@ odProfileBtn.addEventListener("click",(e)=>{
 
     if (!isClickInsideDiv && !isClickOnButton && isDivVisible) {
         profileCard.classList.remove('profile-active');
+        selfInfoContainer.classList.remove('self-info-container-active');
+        verify.classList.remove("verify-active");
+        classJoin.classList.remove("verify-active");
+        navigateBtnContainer.classList.remove("navigate-btn-container-active");
     }
 });

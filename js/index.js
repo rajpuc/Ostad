@@ -34,3 +34,55 @@ odProfileBtn.addEventListener("click",(e)=>{
         navigateBtnContainer.classList.remove("navigate-btn-container-active");
     }
 });
+
+
+// !-------------------course-category-wraper---------------------------
+
+// Select all links and content containers
+const links = document.querySelectorAll('.course-category-info');
+
+// Add click event to each link
+links.forEach(link => {
+    link.addEventListener('click', event => {
+        // event.preventDefault(); // Prevent default link behavior
+
+        // Remove active class from all links and hide all content
+        links.forEach(link => link.classList.remove('course-category-info-active'));
+
+        // Add active class to the clicked link
+        link.classList.add('course-category-info-active');
+    });
+});
+
+// !-----------------od-course-expand----------------------
+
+
+
+
+const allCrsesNavBtn = document.querySelector("#allCrsesNavBtn");
+const allCrsesNavarrow = document.querySelector("#allCrsesNavBtn img");
+const odCourseExpand = document.querySelector(".od-course-expand");
+
+
+allCrsesNavBtn.addEventListener("click",(e)=>{
+    odCourseExpand.classList.toggle("od-course-expand-active");
+    allCrsesNavarrow.classList.toggle("rotate-180");
+  
+});
+
+ // Event listener for document
+document.addEventListener('click', (event) => {
+    const isClickInsideDiv = odCourseExpand.contains(event.target);
+    console.log(isClickInsideDiv);
+
+    const isClickOnButton = event.target === allCrsesNavBtn;
+    console.log(isClickOnButton);
+    const isDivVisible = odCourseExpand.classList.contains('od-course-expand-active');
+    console.log(isDivVisible);
+
+    if (!isClickInsideDiv && !isClickOnButton && isDivVisible) {
+        odCourseExpand.classList.remove('od-course-expand-active');
+        allCrsesNavarrow.classList.remove("rotate-180");
+    }
+});
+

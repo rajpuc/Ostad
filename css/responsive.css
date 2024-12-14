@@ -1,5 +1,10 @@
 /* ----------------Media quaries-------------- */
 
+@media  (max-width: 1360px){
+    .special img{
+        display: none;
+    }
+}
 @media  (max-width: 1325px){
     #left-nav-download{
         display: none;
@@ -14,6 +19,9 @@
     }
 }
 @media  (max-width: 1210px){
+
+}
+@media  (max-width: 1153px){
 
 }
 @media  (max-width: 1160px){

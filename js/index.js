@@ -62,17 +62,19 @@ links.forEach(link => {
 const allCrsesNavBtn = document.querySelector("#allCrsesNavBtn");
 const allCrsesNavarrow = document.querySelector("#allCrsesNavBtn img");
 const odCourseExpand = document.querySelector(".od-course-expand");
-
+const odCourseExpandInside = document.querySelector(".od-course-expand-inside");
+const body = document.body;
 
 allCrsesNavBtn.addEventListener("click",(e)=>{
     odCourseExpand.classList.toggle("od-course-expand-active");
     allCrsesNavarrow.classList.toggle("rotate-180");
+    body.classList.toggle('no-scroll');
   
 });
 
  // Event listener for document
 document.addEventListener('click', (event) => {
-    const isClickInsideDiv = odCourseExpand.contains(event.target);
+    const isClickInsideDiv = odCourseExpandInside.contains(event.target);
     console.log(isClickInsideDiv);
 
     const isClickOnButton = event.target === allCrsesNavBtn;
@@ -83,6 +85,10 @@ document.addEventListener('click', (event) => {
     if (!isClickInsideDiv && !isClickOnButton && isDivVisible) {
         odCourseExpand.classList.remove('od-course-expand-active');
         allCrsesNavarrow.classList.remove("rotate-180");
+        body.classList.remove('no-scroll');
     }
 });
+
+
+
 

@@ -98,6 +98,9 @@ body{
     transform: translate(50%,50%);
 }
 /* ------------Utilities-------------- */
+body.no-scroll {
+    overflow: hidden; /* Disable scrolling */
+}
 .container{
     max-width: 1400px;
     margin-inline: auto;
@@ -308,6 +311,8 @@ body{
 .ostad-header .container{
  justify-content: space-between;
  padding-block: 16px;
+ background-color: #fff;
+ box-shadow: 0 4px 8px -8px rgba(8, 31, 77, .2);
 }
 .od-right-links-container{
     gap:8px;
@@ -315,8 +320,8 @@ body{
 .ostad-header {
     background-color:#fff;
     position: relative;
-    /* z-index:10; */
-    box-shadow: 0 4px 8px -8px rgba(8, 31, 77, .2);
+    z-index:1;
+    /* box-shadow: 0 4px 8px -8px rgba(8, 31, 77, .2); */
 }
 
 /* -------------------Nav Profile Card ------------------ */
@@ -855,16 +860,20 @@ body{
     padding-top:16px;
     padding-inline: 16px;
 }
-
-.od-course-expand{
-    /* padding-inline: 20px; */
+.od-course-expand-inside{
     display: flex;
     flex-direction: column;
     gap:48px;
+    background-color: #fff;
+}
+.od-course-expand{
+    /* padding-inline: 20px; */
+    height:calc(100vh - 72px);
+    background-color: #10182866; /* Equivalent to  */
+    backdrop-filter: blur(7.5px);
     position: absolute;
     width: 100%;
     transform: translateY(-100%);
-    background-color: #fff;
     z-index: -1;
     transition-property: all;
     transition-timing-function: cubic-bezier(.4,0,.2,1);
@@ -875,6 +884,7 @@ body{
     transition-property: all;
     transition-timing-function: cubic-bezier(.4,0,.2,1);
     transition-duration: .15s;
+    
 }
 
 /* !----app-downloader-wraper---- */

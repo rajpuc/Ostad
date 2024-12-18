@@ -114,12 +114,12 @@ window.addEventListener('resize',()=>{
 
 document.addEventListener('click', (event) => {
     const isClickInsideDiv = odCourseExpandInside.contains(event.target);
-   
+    console.log(isClickInsideDiv);
 
     const isClickOnButton = event.target === allCrsesNavBtn;
-
+    console.log(isClickOnButton);
     const isDivVisible = odCourseExpand.classList.contains('od-course-expand-active');
-   
+    console.log(isDivVisible);
 
     if (!isClickInsideDiv && !isClickOnButton && isDivVisible) {
         odCourseExpand.classList.remove('od-course-expand-active');
@@ -277,50 +277,8 @@ expandSCourseArrow.forEach((item,index)=>{
             updateButtonVisibility();
         });
 
+
+
         updateButtonVisibility();
     })
 })
-
-
-
-// !------------------Notification____________________
-
-const odAllNotifications = document.querySelector(".od-all-notifications");
-const odNotiBtn = document.querySelector(".od-notification-wrapper");
-
-// odNotiBtn.addEventListener("click",(event)=>{
-//     odAllNotifications.classList.toggle('d-flex');
-//     console.log('inside noti');
-// })
-
-
-// document.addEventListener('click', (event) => {
-//     const isClickInsideDiv = odAllNotifications.contains(event.target);
-//     console.log(isClickInsideDiv)
-
-//     const isClickOnButton = event.target === odNotiBtn;
-   
-//     const isDivVisible = odAllNotifications.classList.contains('d-flex');
-
-
-//     if (!isClickInsideDiv && !isClickOnButton && isDivVisible) {
-//         console.log("Hello")
-//         odAllNotifications.classList.remove('d-flex');
-//     }
-// });
-
-
-odNotiBtn.addEventListener("click", (event) => {
-    event.preventDefault(); // Prevent default link behavior
-    odAllNotifications.classList.toggle("d-flex");
-});
-
-document.addEventListener("click", (event) => {
-    const isClickInsideDiv = odAllNotifications.contains(event.target);
-    const isClickOnButton = odNotiBtn.contains(event.target); // Adjusted for new structure
-    const isDivVisible = odAllNotifications.classList.contains("d-flex");
-
-    if (!isClickInsideDiv && !isClickOnButton && isDivVisible) {
-        odAllNotifications.classList.remove("d-flex");
-    }
-});

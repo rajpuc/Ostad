@@ -1,4 +1,4 @@
-/* Font Family */
+Font Family
 @font-face {
     font-family:hind_siliguri_bold ;
     src: url('../assets/font/hind_siliguri_bold.woff');
@@ -90,6 +90,7 @@ img{
 body{
     font-family: var(--font-regular); 
     background-color: var(--background-color);
+    position: relative;
 }
 .color{
     width: 100px;
@@ -121,6 +122,9 @@ body.no-scroll {
 .rotate-180{
     transform: rotate(180deg);
 }
+.d-flex{
+    display: flex !important;
+}
 /* ------dev utilities-------- */
 .bg-1{
     background-color: cornsilk;
@@ -149,6 +153,7 @@ body.no-scroll {
 }
 .od-notification-container img{
     width: 16px;
+    pointer-events: none;
 }
 .od-language-container img,
 .od-all-courses-container img,
@@ -257,6 +262,10 @@ body.no-scroll {
     justify-content: center;
     border-radius: 50px;
     background-color: #fda29b;
+    pointer-events: none;
+}
+.od-notification-wrapper{
+    position: relative;
 }
 .od-notification-container{
     padding-inline: 4px;
@@ -264,7 +273,203 @@ body.no-scroll {
     width: fit-content;
     border-radius: 50px;
     background-color: var(--background-color);
+
 }
+/* !------------Notification----------- */
+.od-notification-container .od-all-notifications {
+    position: absolute;
+    top:50px;
+    right: 0;
+    min-width:375px;
+    height: fit-content;
+    max-height: 521px;
+    width:375px;
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    z-index: 77;    
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.notify-header-container,.notify-unread-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:8px 16px;
+    border-bottom: 2px solid #dee2e7;
+}
+.notify-header-container img{
+    width: 24px;
+    height: 24px;
+}
+.notify-heading{
+    font-size: 18px;
+    font-family: var(--font-semi-bold);
+    color:var(--text-color);
+}
+.notify-unread-container .unread{
+    color:#475467;
+    font-size: 14px;
+    font-family: var(--font-regular);
+}
+.notify-markall-contr{
+    display: flex;
+}
+.notify-markall-contr img{
+    width: 19px;
+    height: 19px;
+}
+.notify-markall-contr p{
+    color:#000;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: var(--font-semi-bold);
+    gap:8px;
+}
+
+.notification-all{
+    display: flex;
+    flex-direction: column;
+    gap:4px;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color:#eaecf0;
+}
+
+.single-not-cont{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding:10px;
+    gap:8px;
+    background-color: #fff;
+}
+.noti-img-cont{
+    display: flex;
+    flex-direction: column;
+    gap:4px;
+}
+.noti-img-cont .noti-dot{
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #f04438;
+}
+.noti-img-cont img{
+    width: 40px;
+    height: 40px;
+}
+.noti-text-cont{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: var(--font-size-base);
+    color: var(--black-color);
+}
+.noti-text-tags-cont{
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    gap: 4px;
+}
+.noti-text-tags-cont p{
+    white-space: nowrap;
+}
+.noti-tag-with-dot{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap:4px;
+}
+.noti-tag-with-dot p {
+    overflow: hidden;                  /* Hide overflowing text */
+    display: -webkit-box;              /* Required for line clamping */
+    -webkit-box-orient: vertical;      /* Specifies vertical stacking of lines */
+    -webkit-line-clamp: 1;             /* Limits text to 1 line */
+    text-overflow: ellipsis;           /* Adds an ellipsis for overflow */
+    /* background-color: red;             Your background color */
+    word-break: normal;                /* Prevent breaking words arbitrarily */
+    white-space: normal;
+}
+
+.noti-btn-cntr{
+    padding:8px;
+    background-color: #f9f9fa;
+}
+
+.noti-btn-cntr button{
+    font-size: 14px;
+    color:var(--black-color);
+    text-transform: uppercase;
+    padding:8px 24px;
+    background-color: rgb(208, 213, 221);
+    width: 100%;
+    font-family: var(--font-semi-bold);
+    border-radius: 5px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .od-language-container{
     gap:5px;
 }
@@ -826,23 +1031,27 @@ body.no-scroll {
 /* !-------------------Scroll bar Styling------------------ */
 
 /* Custom Scrollbar Styling (WebKit browsers) */
-.od-courses-container .od-crses-info-cont::-webkit-scrollbar{
+.od-courses-container .od-crses-info-cont::-webkit-scrollbar,
+.notification-all::-webkit-scrollbar{
     width: 5px; /* Width of the scrollbar */
 }
 
-.od-courses-container .od-crses-info-cont::-webkit-scrollbar-track {
+.od-courses-container .od-crses-info-cont::-webkit-scrollbar-track,
+.notification-all::-webkit-scrollbar-track{
     background: #d0d5dd;; /* Background of the scrollbar track */
    /* Rounded corners */
     border-top-right-radius:50px ;
     overflow: hidden;
 }
 
-.od-courses-container .od-crses-info-cont::-webkit-scrollbar-thumb {
+.od-courses-container .od-crses-info-cont::-webkit-scrollbar-thumb,
+.notification-all::-webkit-scrollbar-thumb{
     background: var(--black-color); /* Color of the scrollbar thumb */
     border-radius: 10px; /* Rounded corners */
 }
 
-.od-courses-container .od-crses-info-cont::-webkit-scrollbar-thumb:hover {
+.od-courses-container .od-crses-info-cont::-webkit-scrollbar-thumb:hover,
+.notification-all::-webkit-scrollbar-thumb:hover{
     background: #555; /* Color when hovered */
 }
 

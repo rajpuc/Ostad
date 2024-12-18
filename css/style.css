@@ -276,7 +276,7 @@ body.no-scroll {
 
 }
 /* !------------Notification----------- */
-.od-notification-container .od-all-notifications {
+.od-notification-wrapper .od-all-notifications {
     position: absolute;
     top:50px;
     right: 0;

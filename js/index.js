@@ -286,41 +286,26 @@ expandSCourseArrow.forEach((item,index)=>{
 // !------------------Notification____________________
 
 const odAllNotifications = document.querySelector(".od-all-notifications");
-const odNotiBtn = document.querySelector(".od-notification-wrapper");
+const odNotiBtn = document.querySelector(".od-notification-container");
 
-// odNotiBtn.addEventListener("click",(event)=>{
-//     odAllNotifications.classList.toggle('d-flex');
-//     console.log('inside noti');
-// })
+odNotiBtn.addEventListener("click",(event)=>{
+    event.stopPropagation();
+    odAllNotifications.classList.toggle('d-flex');
+    console.log('inside noti');
+})
 
-
-// document.addEventListener('click', (event) => {
-//     const isClickInsideDiv = odAllNotifications.contains(event.target);
-//     console.log(isClickInsideDiv)
-
-//     const isClickOnButton = event.target === odNotiBtn;
-   
-//     const isDivVisible = odAllNotifications.classList.contains('d-flex');
-
-
-//     if (!isClickInsideDiv && !isClickOnButton && isDivVisible) {
-//         console.log("Hello")
-//         odAllNotifications.classList.remove('d-flex');
-//     }
+// Prevent div2 clicks from propagating to div1
+// odAllNotifications.addEventListener('click', (event) => {
+//     event.stopPropagation();
 // });
 
-
-odNotiBtn.addEventListener("click", (event) => {
-    event.preventDefault(); // Prevent default link behavior
-    odAllNotifications.classList.toggle("d-flex");
-});
-
-document.addEventListener("click", (event) => {
+document.addEventListener('click', (event) => {
     const isClickInsideDiv = odAllNotifications.contains(event.target);
-    const isClickOnButton = odNotiBtn.contains(event.target); // Adjusted for new structure
-    const isDivVisible = odAllNotifications.classList.contains("d-flex");
-
+    const isClickOnButton = event.target === odNotiBtn;
+    const isDivVisible = odAllNotifications.classList.contains('d-flex');
     if (!isClickInsideDiv && !isClickOnButton && isDivVisible) {
-        odAllNotifications.classList.remove("d-flex");
+        console.log("Hello")
+        odAllNotifications.classList.remove('d-flex');
     }
 });
+

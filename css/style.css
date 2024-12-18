@@ -112,6 +112,8 @@ body.no-scroll {
     font-family: var(--font-semi-bold);
     color: var(--text-color);
 }
+
+
 .flex-center{
     display: flex;
     align-items: center;
@@ -251,6 +253,89 @@ body.no-scroll {
 .ostad-left-nav-links{
     gap:16px;
 }
+
+
+/* !---------Downloads Container---------------- */
+#left-nav-download{
+    position: relative;
+}
+.left-nav-down-cont{
+    position: absolute;
+    top:calc(100% + 5px);
+    width: 195px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+    padding-inline: 12px;
+    background-color: var(--background-color);
+    border-radius: 6px;
+    height: 0;
+    overflow: hidden;
+    /* opacity: 0;
+    pointer-events: none; */
+    /* opacity: 0; */
+    transition: height .5s cubic-bezier(0.18, 0.89, 0, 1.22), padding-block 0.5s cubic-bezier(0.18, 0.89, 0, 1.22); 
+    /* transition: height .5s cubic-bezier(0.01, 1.41, 0.25, 1.48);  */
+ 
+}
+
+.left-nav-down-cont-active {
+    padding-block: 12px;
+    height: 157px; 
+    /* opacity: 1; */
+    pointer-events: auto;
+    transition: height .4s cubic-bezier(0.18, 0.89, 0, 1.22), padding-block 0.5s cubic-bezier(0.18, 0.89, 0, 1.22);; 
+}
+
+.left-nav-down-cont img{
+    width: 18px;
+    height: 18px;
+}
+.left-nav-down-cont .down-btn{
+    width: 100%;
+    display: block;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    
+}
+.down-btn-wraper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transform: scale(0);
+    transform-origin: center center;
+    /* transition: transform .1s ease-in;  */
+}
+.down-btn-wraper-active{
+    transform: scale(1);
+    transition: transform  .2s linear; 
+}
+
+.left-nav-down-cont .down-btn:hover{
+    background-color: #eaecf0;
+}
+.left-nav-down-cont .left-down-cont{
+    display: flex;
+    align-items: center;
+    gap:8px;
+}
+.left-nav-down-cont .left-down-cont p{
+    font-size: 14px;
+    color:var(--text-color);
+
+}
+
+
+
+
+
+
+
+
+
+
 
 /*-------------------- Rignt nav links------------------ */
 .od-notification-container span{

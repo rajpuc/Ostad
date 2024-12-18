@@ -289,9 +289,9 @@ const odAllNotifications = document.querySelector(".od-all-notifications");
 const odNotiBtn = document.querySelector(".od-notification-container");
 
 odNotiBtn.addEventListener("click",(event)=>{
-    event.stopPropagation();
+    // event.stopPropagation();
     odAllNotifications.classList.toggle('d-flex');
-    console.log('inside noti');
+    // console.log('inside noti');
 })
 
 // Prevent div2 clicks from propagating to div1
@@ -309,3 +309,46 @@ document.addEventListener('click', (event) => {
     }
 });
 
+
+
+// !___________________Downloads_____________________
+
+const leftNavDownCont = document.querySelector('.left-nav-down-cont');
+const leftNavDownBtnWrap = document.querySelectorAll('.down-btn-wraper');
+const leftNavDownBtn = document.querySelector('#left-nav-download > a');
+
+
+leftNavDownBtn.addEventListener("click",(event)=>{
+    leftNavDownCont.classList.toggle('left-nav-down-cont-active');
+    leftNavDownBtnWrap.forEach((item)=>{
+        item.classList.toggle('down-btn-wraper-active')
+    })
+    
+})
+
+// document.addEventListener('click', (event) => {
+//     const isClickInsideDiv = leftNavDownCont.contains(event.target);
+//     const isClickOnButton = event.target === leftNavDownBtn;
+//     const isDivVisible = leftNavDownCont.classList.contains('left-nav-down-cont-active');
+//     if (!isClickInsideDiv && !isClickOnButton && isDivVisible) {
+//         leftNavDownCont.classList.remove('left-nav-down-cont-active');
+//         leftNavDownBtnWrap.forEach((item)=>{
+//             item.classList.remove('down-btn-wraper-active');
+//         })
+//     }
+// });
+
+// Close dropdown when clicking outside
+document.addEventListener('click', (event) => {
+    const isClickInsideDiv = leftNavDownCont.contains(event.target);
+    const isClickOnButton = leftNavDownBtn.contains(event.target); // Includes child elements
+    // const isClickOnButton =  event.target === leftNavDownBtn;
+    const isDivVisible = leftNavDownCont.classList.contains('left-nav-down-cont-active');
+
+    if (!isClickInsideDiv && !isClickOnButton && isDivVisible) {
+        leftNavDownCont.classList.remove('left-nav-down-cont-active');
+        leftNavDownBtnWrap.forEach((item) => {
+            item.classList.remove('down-btn-wraper-active');
+        });
+    }
+});

@@ -1,0 +1,192 @@
+/* -------------------Navbar------------------- */
+
+/*-------------------- Rignt nav links------------------ */
+.od-search img{
+    width: 28px;
+}
+.with-img img,.special a img{
+    width:24px;
+}
+.od-notification-container img{
+    width: 16px;
+    pointer-events: none;
+}
+.od-language-container img,
+.od-all-courses-container img,
+.od-dashboard img{
+    width: 20px;
+}
+.od-profile span img{
+    width: 12px;
+}
+
+.ostad-logo{
+    width: 104px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.od-links div a{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 6px 8px;
+    cursor: pointer;
+    gap:8px;
+    text-transform: uppercase;
+    border-radius:4px;
+    transition:background-color .3s cubic-bezier(0.4, 0, 0.2, 1);;
+}
+.od-links div a:hover{
+    background-color: var(--background-color);
+}
+
+.od-search{
+    width: 177px;
+    background-color: var(--background-color);
+    padding-inline: 12px;
+    padding-block: 6px;
+    border-radius: 40px;
+    gap:8px;
+}
+.od-search span{
+    font-size: var(--font-size-base);
+    color: #475467;
+}
+.od-links{
+    gap: 5px;
+    align-items: stretch;
+}
+.special{
+    position: relative;
+    z-index: 1;
+}
+.special a{
+    background-color: #fff;
+}
+.special a:hover{
+    background-color: #fff !important;
+}
+@property --angle{   
+    syntax: "<angle>";/* This controls the values this variable can accept. Angle means it has to be a number followed by degrees. */
+    initial-value: 0deg;
+    inherits: false; /* this is also a default setting for custom property */
+}
+.special::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    /* background-image: conic-gradient(from var(--angle),#ffab00, #f04438, #20b486, #ffab00, #f04438, #20b486, #ffab00); */
+    background-image: conic-gradient(#ffab00, #f04438, #20b486, #ffab00, #f04438, #20b486, #ffab00);
+    /* filter: hue-rotate(0); */
+    z-index: -1;
+    padding: 1px;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-sizing: content-box;
+    animation:.5s spin  linear infinite;
+}
+
+@keyframes spin {
+    from{
+        /* --angle:0deg; */
+        filter: hue-rotate(0);
+    }
+    to{
+        filter:hue-rotate(1turn)
+    }
+}
+.od-links{
+    gap:8px;
+}
+.od-left-links-container,
+.ostad-left-nav-links{
+    gap:16px;
+}
+
+
+/* !---------App Downloads Container---------------- */
+#left-nav-download{
+    position: relative;
+}
+.left-nav-down-cont{
+    position: absolute;
+    top:calc(100% + 5px);
+    width: 195px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+    padding-inline: 12px;
+    background-color: var(--background-color);
+    border-radius: 6px;
+    height: 0;
+    overflow: hidden;
+    /* opacity: 0;
+    pointer-events: none; */
+    /* opacity: 0; */
+    transition: height .5s cubic-bezier(0.18, 0.89, 0, 1.22), padding-block 0.5s cubic-bezier(0.18, 0.89, 0, 1.22); 
+    /* transition: height .5s cubic-bezier(0.01, 1.41, 0.25, 1.48);  */
+ 
+}
+
+.left-nav-down-cont-active {
+    padding-block: 12px;
+    height: 157px; 
+    /* opacity: 1; */
+    pointer-events: auto;
+    transition: height .4s cubic-bezier(0.18, 0.89, 0, 1.22), padding-block 0.5s cubic-bezier(0.18, 0.89, 0, 1.22);; 
+}
+
+.left-nav-down-cont img{
+    width: 18px;
+    height: 18px;
+}
+.left-nav-down-cont .down-btn{
+    width: 100%;
+    display: block;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    
+}
+.down-btn-wraper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transform: scale(0);
+    transform-origin: center center;
+    /* transition: transform .1s ease-in;  */
+}
+.down-btn-wraper-active{
+    transform: scale(1);
+    transition: transform  .2s linear; 
+}
+
+.left-nav-down-cont .down-btn:hover{
+    background-color: #eaecf0;
+}
+.left-nav-down-cont .left-down-cont{
+    display: flex;
+    align-items: center;
+    gap:8px;
+}
+.left-nav-down-cont .left-down-cont p{
+    font-size: 14px;
+    color:var(--text-color);
+
+}
+
+
+
+
+
+
+
+
+
+

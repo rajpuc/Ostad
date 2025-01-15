@@ -3,6 +3,7 @@
 /*-------------------- Rignt nav links------------------ */
 .od-search img{
     width: 28px;
+    pointer-events: none;
 }
 .with-img img,.special a img{
     width:24px;
@@ -53,6 +54,7 @@
 .od-search span{
     font-size: var(--font-size-base);
     color: #475467;
+    pointer-events: none;
 }
 .od-links{
     gap: 5px;
@@ -106,6 +108,8 @@
 .od-left-links-container,
 .ostad-left-nav-links{
     gap:16px;
+    width: 100%;
+    position: relative;
 }
 
 

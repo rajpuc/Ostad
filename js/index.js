@@ -304,7 +304,7 @@ document.addEventListener('click', (event) => {
     const isClickOnButton = event.target === odNotiBtn;
     const isDivVisible = odAllNotifications.classList.contains('d-flex');
     if (!isClickInsideDiv && !isClickOnButton && isDivVisible) {
-        console.log("Hello")
+        
         odAllNotifications.classList.remove('d-flex');
     }
 });

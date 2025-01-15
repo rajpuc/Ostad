@@ -9,25 +9,114 @@
     <!-- <link rel="stylesheet" href="./css/style.css"> -->
      <link rel="stylesheet" href="./css/reset.css">
      <link rel="stylesheet" href="./css/navigation/leftnav.css">
+     <link rel="stylesheet" href="./css/navigation/search.css">
      <link rel="stylesheet" href="./css/navigation/rightnav.css">
-    <link rel="stylesheet" href="./css/navigation/smallScreenCategoryCourses.css">
-    <link rel="stylesheet" href="./css/responsive.css">
+     <link rel="stylesheet" href="./css/navigation/smallScreenCategoryCourses.css">
+     <link rel="stylesheet" href="./css/responsive.css">
 </head>
 
 <body>
     <!-- Navigation Menu -->
     <header class="ostad-header ">
         <div class="container flex-center">
-            <nav class="ostad-left-nav-links flex-center ">
+            <nav class="ostad-left-nav-links flex-center">
                 <div class="ostad-logo">
                     <img src="./assets/images/logo/ostad_logo_light.png" alt="" class="od-big-logo">
                 </div>
-                <div class="od-left-links-container flex-center">
-                    <div class="od-search flex-center">
-                        <img src="./assets/images/font-image/ostad-search.svg" alt="" class="search-logo">
-                        <span>Search course</span>
+                <div class="od-left-links-container flex-center ">
+                    <div id="clicked-hidden" class="clicked-hidden-wraper">
+                        <button  class="od-search flex-center ">
+                            <img src="./assets/images/font-image/ostad-search.svg" alt="" class="search-logo">
+                            <span>Search course</span>
+                        </button>
                     </div>
-                    <div class="od-links flex-center">
+                    <!-- Search Engine -->
+                    <div id="search-engine" >
+                        <div class="inner-se-container">
+                            <div class="se-input-wrapper">
+                                <input type="text" placeholder="Search Live Courses, Webinars">
+                            </div>
+                            <div class="se-separator"></div>
+                            <div class="se-recent-search-wrapper">
+                                <p class="headlines">Recent Searches</p>
+                                <div class="se-search-wrap">
+                                    <a class="search-item">
+                                        <div>
+                                            <div class="left">
+                                                <img src="./assets/images/searchengine/history-line.svg" alt="">
+                                                <span>Hello Lucifer</span>
+                                            </div>
+                                            <div class="right">
+                                                <img src="./assets/images/searchengine/delete-bin-line.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="se-separator"></div>
+                            <div class="se-trending-search-wrapper">
+                                <p class="headlines">Trending Searches</p>
+                                <div class="se-search-wrap">
+                                    <a class="search-item">
+                                        <div>
+                                            <div class="left">
+                                                <img src="./assets/images/searchengine/mdi_trendi.svg" alt="">
+                                                <span>Django</span>
+                                            </div>
+                                            <div class="right">
+                                                <img src="./assets/images/searchengine/arrow-right-up-line.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a class="search-item">
+                                        <div>
+                                            <div class="left">
+                                                <img src="./assets/images/searchengine/mdi_trendi.svg" alt="">
+                                                <span>Node JS</span>
+                                            </div>
+                                            <div class="right">
+                                                <img src="./assets/images/searchengine/arrow-right-up-line.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a class="search-item">
+                                        <div>
+                                            <div class="left">
+                                                <img src="./assets/images/searchengine/mdi_trendi.svg" alt="">
+                                                <span>React</span>
+                                            </div>
+                                            <div class="right">
+                                                <img src="./assets/images/searchengine/arrow-right-up-line.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a class="search-item">
+                                        <div>
+                                            <div class="left">
+                                                <img src="./assets/images/searchengine/mdi_trendi.svg" alt="">
+                                                <span>ExpressJS</span>
+                                            </div>
+                                            <div class="right">
+                                                <img src="./assets/images/searchengine/arrow-right-up-line.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a class="search-item">
+                                        <div>
+                                            <div class="left">
+                                                <img src="./assets/images/searchengine/mdi_trendi.svg" alt="">
+                                                <span>MongoDB</span>
+                                            </div>
+                                            <div class="right">
+                                                <img src="./assets/images/searchengine/arrow-right-up-line.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="make-hidden" class="od-links flex-center">
                         <div class="special" id="left-nav-special">
                             <a href="#" class="nav-font-styling ">
                                 <img src="./assets/images/font-image/auto-awesome.png" alt="">
@@ -708,6 +797,8 @@
                 </div>
             </div>
         </div>
+        <!-- background-shadow -->
+        <div id="background-shadow" class="d-none"></div>
     </header>
 
     <!-- for small screens: Shows course categories and their courses. -->
@@ -2052,6 +2143,7 @@
     </main>
     
     <script src="./js/index.js"></script>
+    <script src="./js/search.js"></script>
     <!-- <script src="./js/test2.js"></script> -->
 </body>
 

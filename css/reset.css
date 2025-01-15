@@ -112,8 +112,6 @@ body.no-scroll {
     font-family: var(--font-semi-bold);
     color: var(--text-color);
 }
-
-
 .flex-center{
     display: flex;
     align-items: center;
@@ -126,6 +124,9 @@ body.no-scroll {
 }
 .d-flex{
     display: flex !important;
+}
+.d-none{
+    display: none;
 }
 /* ------dev utilities-------- */
 .bg-1{

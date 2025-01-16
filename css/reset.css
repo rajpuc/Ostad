@@ -128,6 +128,9 @@ body.no-scroll {
 .d-none{
     display: none;
 }
+.gap-16{
+    gap:16px;
+}
 /* ------dev utilities-------- */
 .bg-1{
     background-color: cornsilk;

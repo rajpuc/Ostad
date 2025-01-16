@@ -863,3 +863,7 @@ button#allCrsesNavBtn img {
     border-radius: 5px;
 
 }
+
+#menu-btn{
+    display: none;
+}

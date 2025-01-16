@@ -27,6 +27,9 @@
     #free-courses{
         display: none;
     }
+    #more{
+        display: flex;
+    }
 }
 @media  (max-width: 1153px){
 
@@ -43,11 +46,97 @@
     #left-nav-special, #od-language, .od-notification-wrapper{
         display: none;
     }
-    
+    .container{
+        display: flex;
+        max-width: 690px;
+        width: 100%;
+        padding-inline: 15px;
+    }
+    .od-left-links-container{
+        gap:0px;
+    }
+    #moreBtn img{
+        width: 24px;
+        scale: 0.4;
+    }
+    #xl-logo{
+        display: none;
+    }
+    .ostad-logo{
+        width:fit-content;
+    }
+    #sm-logo{
+        display: block;
+        width: 28px;
+    }
+    .od-left-links-container{
+        gap: 16px;
+    }
 }
 @media  (max-width: 767px){
     #more{
         display: none;
+    }
+    .container{
+        max-width: 510px;
+        width: 100%;
+    }
+    #clicked-hidden{
+       
+        margin-left: auto;
+    }
+    #clicked-hidden button span{
+        display: none;
+    }
+    #clicked-hidden button{
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #clicked-hidden button img{
+        width: 24px;
+        height: 24px;
+    }
+    .od-left-links-container{
+        gap: 8px;
+    }
+    .gap-16{
+        gap:8px;
+    }
+    .od-all-courses-container, .od-dashboard{
+        padding: 4px 12px;
+        border-radius: 4px;
+    }
+    #allCrsesNavBtn .sm-hid{
+        display: none;
+    }
+    .od-dashboard img{
+        display: none;
+    }
+    #left-nav-special{
+        display: flex;
+    }
+    #left-nav-special .nav-font-styling{
+        font-size: 14px;
+        padding: 4px 12px;
+        border-radius: 4px;
+    }
+    #od-pr-btn{
+        display: none;
+    }
+    #menu-btn{
+        display: block;
+    }
+    #menu-btn a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #menu-btn a img{
+        width: 24px;
+        height: 24px;
     }
 }
 @media  (max-width: 640px){

@@ -186,7 +186,36 @@
 }
 
 
-
+/* ---------More btn------------- */
+#more{
+    display: none;
+}
+#moreBtn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 8px;
+    background-color: transparent;
+    gap: 8px;
+    border-radius: 4px;
+}
+#moreBtn:hover{
+    background-color: var(--background-color);
+}
+#moreBtn span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#moreBtn img{
+    width: 24px;
+    display: flex;
+}
+#moreBtn #lilmore{
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family:var(--font-semi-bold) ;
+}
 
 
 

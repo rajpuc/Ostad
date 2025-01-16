@@ -300,16 +300,32 @@ const makeHidden = document.querySelector("#make-hidden");
 const searchEngine = document.querySelector("#search-engine");
 const backgroundShadow = document.querySelector("#background-shadow");
 
+const leftNavSpecial = document.querySelector("#left-nav-special");
+const allCourseSE = document.querySelector("#all-crs-se");
+const dashboardSE = document.querySelector("#dashboardSE");
+const odPrBtn = document.querySelector("#od-pr-btn");
+const menuBtn = document.querySelector("#menu-btn");
+
 clickedHidden.addEventListener("click", () => {
-  
+    console.log(menuBtn)
+  let viewportWidth = document.documentElement.clientWidth;
   makeHidden.classList.add("d-none");
   searchEngine.classList.add("d-flex");
   searchEngine.classList.remove("d-none");
   backgroundShadow.classList.remove("d-none");
   body.classList.add('no-scroll');
+    
+  if(viewportWidth < 1024){
+    leftNavSpecial.classList.add("d-none");
+    allCourseSE.classList.add("d-none");
+    dashboardSE.classList.add("d-none");
+    odPrBtn.classList.add("d-none");
+    menuBtn.style.display= 'none';
+  }
 });
 
 function searchEngineController(event){
+    let viewportWidth = document.documentElement.clientWidth;
     const isClickInsideDiv = searchEngine.contains(event.target);
     const isClickOnButton = event.target.closest("#clicked-hidden") !== null;
     const isDivVisible = searchEngine.classList.contains("d-flex");
@@ -320,6 +336,13 @@ function searchEngineController(event){
       searchEngine.classList.add("d-none");
       backgroundShadow.classList.add("d-none");
       body.classList.remove('no-scroll');
+      if(viewportWidth < 1024){
+        leftNavSpecial.classList.remove("d-none");
+        allCourseSE.classList.remove("d-none");
+        dashboardSE.classList.remove("d-none");
+        odPrBtn.classList.remove("d-none");
+        menuBtn.style.display= 'block';
+      }
     }
 }
 

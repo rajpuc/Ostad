@@ -18,8 +18,15 @@
         transform: translate(-50.2%,-48.7%);
     }
 }
-@media  (max-width: 1210px){
-
+@media  (max-width: 1219px){
+    #nav-blog{
+        display: none;
+    }
+}
+@media  (max-width: 1209px){
+    #free-courses{
+        display: none;
+    }
 }
 @media  (max-width: 1153px){
 
@@ -27,11 +34,21 @@
 @media  (max-width: 1160px){
     
 }
-@media  (max-width: 1024px){
-
+@media  (max-width: 1118px){
+    #codemama{
+        display: none;
+    }
 }
-@media  (max-width: 768px){
-
+@media  (max-width: 1023px){
+    #left-nav-special, #od-language, .od-notification-wrapper{
+        display: none;
+    }
+    
+}
+@media  (max-width: 767px){
+    #more{
+        display: none;
+    }
 }
 @media  (max-width: 640px){
 

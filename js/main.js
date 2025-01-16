@@ -1,3 +1,4 @@
+//!---------------Profile Btn------------------
 const odProfileBtn = document.querySelector("#od-profile");
 const profileCard = document.querySelector("#profile-card");
 const selfInfoContainer = document.querySelector(".self-info-container")
@@ -13,8 +14,7 @@ odProfileBtn.addEventListener("click",(e)=>{
     navigateBtnContainer.classList.toggle("navigate-btn-container-active");
 });
 
-
-document.addEventListener('click', (event) => {
+function profileCardToggler(event){
     const isClickInsideDiv = profileCard.contains(event.target);
     /**
      * ! parentNode.contains(childNode); Returns:
@@ -32,13 +32,12 @@ document.addEventListener('click', (event) => {
         classJoin.classList.remove("verify-active");
         navigateBtnContainer.classList.remove("navigate-btn-container-active");
     }
-});
+}
 
+//!---------------All Courses------------------
 
-// !-------------------course-category-wraper---------------------------
-
+//course category wrapper
 const links = document.querySelectorAll('.course-category-info');
-
 
 links.forEach(link => {
     link.addEventListener('click', event => {
@@ -47,11 +46,7 @@ links.forEach(link => {
     });
 });
 
-
-
-
-
-// !-----------------od-course-expand----------------------
+//od-course-expand
 
 const allCrsesNavBtn = document.querySelector("#allCrsesNavBtn");
 const allCrsesNavarrow = document.querySelector("#allCrsesNavBtn img");
@@ -109,32 +104,20 @@ window.addEventListener('resize',()=>{
     }
 })
 
-// !------finished-------------
+function allCourseExpander(event){
 
-document.addEventListener('click', (event) => {
     const isClickInsideDiv = odCourseExpandInside.contains(event.target);
-   
-
     const isClickOnButton = event.target === allCrsesNavBtn;
-
     const isDivVisible = odCourseExpand.classList.contains('od-course-expand-active');
-   
 
     if (!isClickInsideDiv && !isClickOnButton && isDivVisible) {
         odCourseExpand.classList.remove('od-course-expand-active');
         allCrsesNavarrow.classList.remove("rotate-180");
         body.classList.remove('no-scroll');
     }
-});
+}
 
-
-
-
-
-
-// !___________OD_small_expnad___________________
-
-
+//OD Samall expand
 const collapseContainer = document.querySelector('.expand-s-collapse');
 const expandSLineContainer = document.querySelector('.expand-s-horizontal-cont');
 
@@ -215,44 +198,28 @@ document.addEventListener('touchmove', resizeContent);
 document.addEventListener('touchend', stopResizing);
 
 
-// !________________________Courses Slider_______________________________
-
-
-
+// Courses Slider
 const expandSCourseArrow = document.querySelectorAll('.expand-s-course-arrow');
 const expandSCont = document.querySelectorAll('.expand-s-coresponiding-crses-cont');
-
-
 const correspondCrsesContainer = document.querySelectorAll('.expand-s-coresponiding-crses');
 const correspondCrsesWrap = document.querySelectorAll('.expand-s-coresponiding-crses-wrp');
 const expandSliderLeftBtn = document.querySelectorAll('.expand-s-left-btn');
 const expandSliderRightBtn = document.querySelectorAll('.expand-s-right-btn');
 
-// expandSCourseArrow.addEventListener('click',(e)=>{
-//     expandSCont.classList.toggle('d-flex');
-// });
 expandSCourseArrow.forEach((item,index)=>{
     item.addEventListener('click',()=>{
         expandSCont[index].classList.toggle('d-flex');
-
         item.querySelector('img').classList.toggle('rotatate');
-
-
-
 
         // cards details
         const cardWidth = 149;
         const gap = 6;
         let currentOffset = 0;
 
-
         const visibleAreaWidth = correspondCrsesContainer[index].offsetWidth;
-
 
         // Calculate the total scrollable width
         const totalScrollableWidth = correspondCrsesWrap[index].scrollWidth - visibleAreaWidth;
-
-
 
         // Update button visibility
         function updateButtonVisibility() {
@@ -281,8 +248,7 @@ expandSCourseArrow.forEach((item,index)=>{
 })
 
 
-
-// !------------------Notification____________________
+//!--------------Notifications-----------------
 
 const odAllNotifications = document.querySelector(".od-all-notifications");
 const odNotiBtn = document.querySelector(".od-notification-container");
@@ -290,32 +256,23 @@ const odNotiBtn = document.querySelector(".od-notification-container");
 odNotiBtn.addEventListener("click",(event)=>{
     // event.stopPropagation();
     odAllNotifications.classList.toggle('d-flex');
-    // console.log('inside noti');
 })
 
-// Prevent div2 clicks from propagating to div1
-// odAllNotifications.addEventListener('click', (event) => {
-//     event.stopPropagation();
-// });
-
-document.addEventListener('click', (event) => {
+function notificationController(event){
     const isClickInsideDiv = odAllNotifications.contains(event.target);
     const isClickOnButton = event.target === odNotiBtn;
     const isDivVisible = odAllNotifications.classList.contains('d-flex');
-    if (!isClickInsideDiv && !isClickOnButton && isDivVisible) {
-        
+
+    if (!isClickInsideDiv && !isClickOnButton && isDivVisible) {   
         odAllNotifications.classList.remove('d-flex');
     }
-});
+}
 
-
-
-// !___________________Downloads_____________________
+//!----------------Downloads-------------------
 
 const leftNavDownCont = document.querySelector('.left-nav-down-cont');
 const leftNavDownBtnWrap = document.querySelectorAll('.down-btn-wraper');
 const leftNavDownBtn = document.querySelector('#left-nav-download > a');
-
 
 leftNavDownBtn.addEventListener("click",(event)=>{
     leftNavDownCont.classList.toggle('left-nav-down-cont-active');
@@ -325,29 +282,62 @@ leftNavDownBtn.addEventListener("click",(event)=>{
     
 })
 
-// document.addEventListener('click', (event) => {
-//     const isClickInsideDiv = leftNavDownCont.contains(event.target);
-//     const isClickOnButton = event.target === leftNavDownBtn;
-//     const isDivVisible = leftNavDownCont.classList.contains('left-nav-down-cont-active');
-//     if (!isClickInsideDiv && !isClickOnButton && isDivVisible) {
-//         leftNavDownCont.classList.remove('left-nav-down-cont-active');
-//         leftNavDownBtnWrap.forEach((item)=>{
-//             item.classList.remove('down-btn-wraper-active');
-//         })
-//     }
-// });
-
 // Close dropdown when clicking outside
-document.addEventListener('click', (event) => {
+function closeDownloadDropdown(event){
     const isClickInsideDiv = leftNavDownCont.contains(event.target);
-    const isClickOnButton = leftNavDownBtn.contains(event.target); // Includes child elements
-    // const isClickOnButton =  event.target === leftNavDownBtn;
+    const isClickOnButton = leftNavDownBtn.contains(event.target); //Includes child elements
     const isDivVisible = leftNavDownCont.classList.contains('left-nav-down-cont-active');
-
     if (!isClickInsideDiv && !isClickOnButton && isDivVisible) {
         leftNavDownCont.classList.remove('left-nav-down-cont-active');
         leftNavDownBtnWrap.forEach((item) => {
             item.classList.remove('down-btn-wraper-active');
         });
     }
+}
+//!--------------Search Engine-----------------
+const clickedHidden = document.querySelector("#clicked-hidden");
+const makeHidden = document.querySelector("#make-hidden");
+const searchEngine = document.querySelector("#search-engine");
+const backgroundShadow = document.querySelector("#background-shadow");
+
+clickedHidden.addEventListener("click", () => {
+  
+  makeHidden.classList.add("d-none");
+  searchEngine.classList.add("d-flex");
+  searchEngine.classList.remove("d-none");
+  backgroundShadow.classList.remove("d-none");
+  body.classList.add('no-scroll');
+});
+
+function searchEngineController(event){
+    const isClickInsideDiv = searchEngine.contains(event.target);
+    const isClickOnButton = event.target.closest("#clicked-hidden") !== null;
+    const isDivVisible = searchEngine.classList.contains("d-flex");
+  
+    if (!isClickInsideDiv && !isClickOnButton && isDivVisible) {
+      makeHidden.classList.remove("d-none");
+      searchEngine.classList.remove("d-flex");
+      searchEngine.classList.add("d-none");
+      backgroundShadow.classList.add("d-none");
+      body.classList.remove('no-scroll');
+    }
+}
+
+//!--------------Clicked Outside---------------
+
+document.addEventListener('click', (event) => {
+    //!---------------Profile Btn------------------
+    if(profileCard.classList.contains('profile-active')) profileCardToggler(event);
+
+    //!---------------All Courses------------------
+    if(odCourseExpand.classList.contains('od-course-expand-active')) allCourseExpander(event);
+
+    //!--------------Notifications-----------------
+    if(odAllNotifications.classList.contains('d-flex')) notificationController(event);
+
+    //!----------------Downloads-------------------
+    if(leftNavDownCont.classList.contains('left-nav-down-cont-active')) closeDownloadDropdown(event);
+    //!--------------Search Engine-----------------
+    if(searchEngine.classList.contains("d-flex")) searchEngineController(event);
+   
 });

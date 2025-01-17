@@ -46,6 +46,9 @@
     #left-nav-special, #od-language, .od-notification-wrapper{
         display: none;
     }
+    .ostad-left-nav-links{
+        gap:8px;
+    }
     .container{
         display: flex;
         max-width: 690px;
@@ -117,6 +120,11 @@
     }
     #left-nav-special{
         display: flex;
+    }
+    .special::after{
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-51%);
     }
     #left-nav-special .nav-font-styling{
         font-size: 14px;

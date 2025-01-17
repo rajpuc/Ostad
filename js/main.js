@@ -346,6 +346,65 @@ function searchEngineController(event){
     }
 }
 
+
+
+//!--------------Sidebar-----------------
+const sidebarControllerBtn = document.querySelector("#menu-btn");
+const smSidebarContainer = document.querySelector("#smSidebarContainer");
+const sidebarLinkContainer = document.querySelector('#sidebarLinkContainer');
+
+sidebarControllerBtn.addEventListener("click",(event)=>{
+    smSidebarContainer.classList.add("d-block")
+    body.classList.add("no-scroll");
+})
+
+function closeAsideWrapper(event){
+    const isClickInsideDiv = sidebarLinkContainer.contains(event.target);
+    const isClickOnButton = sidebarControllerBtn.contains(event.target); 
+    const isDivVisible = smSidebarContainer.classList.contains('d-block');
+    if (!isClickInsideDiv && !isClickOnButton && isDivVisible) {
+        smSidebarContainer.classList.remove("d-block")
+        body.classList.remove("no-scroll");
+    }
+}
+//!--------------Sidebar Course Category-----------------
+const asideCatBtn = document.getElementById("aside-category-btn");
+const asideCategory = document.getElementById("aside-category");
+const asideCatWrapper = document.querySelector('.aside-category-wrapper');
+
+asideCatBtn.addEventListener("click",(event)=>{
+    asideCatWrapper.classList.toggle("d-block");
+    asideCategory.classList.toggle("bg-aside-sec");
+})
+
+
+//!-------------------More-----------------------------
+const moreBtn = document.querySelector("#moreBtn");
+const moreContainer = document.querySelector(".moreContainer");
+const moreSingleBtnInside = document.querySelector("#moreSingleBtnDow");
+const moreDownloadAppWrapH = document.querySelector(".moreDownloadAppWrapH");
+console.log(moreSingleBtnInside)
+moreBtn.addEventListener("click",(event)=>{
+    moreContainer.classList.toggle("d-flex");
+    moreBtn.classList.toggle("outline");
+})
+moreSingleBtnInside.addEventListener("click",(event)=>{
+    moreDownloadAppWrapH.classList.toggle("d-flex")
+})
+
+function closeMoreDropdown(event){
+    const isClickInsideDiv = moreContainer.contains(event.target);
+    const isClickOnButton = moreBtn.contains(event.target); //Includes child elements
+    const isDivVisible = moreContainer.classList.contains("d-flex");
+    if (!isClickInsideDiv && !isClickOnButton && isDivVisible) {
+        moreContainer.classList.remove("d-flex");
+        moreBtn.classList.remove("outline");
+        if(moreDownloadAppWrapH.classList.contains("d-flex")){
+            moreDownloadAppWrapH.classList.remove("d-flex")
+        }
+    }
+}
+
 //!--------------Clicked Outside---------------
 
 document.addEventListener('click', (event) => {
@@ -360,7 +419,13 @@ document.addEventListener('click', (event) => {
 
     //!----------------Downloads-------------------
     if(leftNavDownCont.classList.contains('left-nav-down-cont-active')) closeDownloadDropdown(event);
+    
     //!--------------Search Engine-----------------
     if(searchEngine.classList.contains("d-flex")) searchEngineController(event);
-   
+    
+    //!--------------Sidebar----------------------
+    if(smSidebarContainer.classList.contains('d-block')) closeAsideWrapper(event);
+
+    //!-------------------More-----------------------------
+    if(moreContainer.classList.contains("d-flex")) closeMoreDropdown(event);
 });

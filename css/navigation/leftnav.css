@@ -61,11 +61,14 @@
     align-items: stretch;
 }
 .special{
+    display: block;
     position: relative;
     z-index: 1;
 }
 .special a{
     background-color: #fff;
+    white-space: nowrap;
+    display: block;
 }
 .special a:hover{
     background-color: #fff !important;
@@ -189,6 +192,7 @@
 /* ---------More btn------------- */
 #more{
     display: none;
+    position: relative;
 }
 #moreBtn {
     display: flex;
@@ -218,8 +222,98 @@
 }
 
 
+/*----- More container -------*/
+.moreContainer{
+    position: absolute;
+    top:calc(100% + 18px);
+    background-color: #F9F9FA;
+    padding: 12px;
+    border: 1px solid rgb(229, 231, 235);
+    width: 195px;
+    border-radius: 4px;
+    flex-direction: column;
+    gap:8px;
+    display: none;
+}
+.moreContainer .moreSingleBtnInside{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding:8px;
+    border-radius: 4px;
+}
+.moreContainer .moreSingleBtnInside.moreSingleBtnInsidePlus{
+    justify-content: center;
+    gap:8px;
+}
+.moreContainer .moreSingleBtnInside.moreSingleBtnInsidePlus img{
+    width: 20px;
+    height: 20px;
+}
+.moreContainer .moreLeft{
+    font-size: var(--font-size-base);
+    text-transform: uppercase;
+    font-family: var(--font-semi-bold);
+    color:var(--text-color);    
+}
+.moreContainer .moreRight{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.moreContainer .moreRight img{
+    width: 18px;
+    height: 18px;
+}
 
-
-
-
+/* ----More : Download App--- */
+.moreContainer #downloadingSofts{
+    position: relative;
+    display: block;
+}
+.moreDownloadAppWrapH{
+    position: absolute;
+    top:0;
+    left:calc(100% + 13px);
+    width: 140px;
+    padding:4px;
+    background-color: #F9F9FA;
+    border: 1px solid rgb(229, 231, 235);
+    border-radius: 4px;
+    display: none;
+    flex-direction: column;
+    gap:4px;
+    
+}
+.moreDownloadAppWrapH .moreAppLink{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+}
+.moreDownloadAppWrapH .moreAppLink .moreAppleft{
+    display: flex;
+    align-items: center;
+    gap:8px;
+}
+.moreDownloadAppWrapH .moreAppLink:hover{
+    background-color: #fff;
+    border: 1px solid rgb(229, 231, 235);
+}
+.moreDownloadAppWrapH .moreAppLink .moreAppleft span{
+    font-family: var(--font-semi-bold);
+    font-size: var(--font-size-base);
+    text-transform: uppercase;
+    color:var(--text-color);
+}
+.moreDownloadAppWrapH img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+}
 

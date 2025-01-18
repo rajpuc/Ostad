@@ -162,8 +162,10 @@
         gap:4px;
     } 
 }
-@media  (max-width: 400px){
-
+@media  (max-width: 410px){
+    #all-crs-se{
+        display: none;
+    }
 }
 @media  (max-width: 372px){
  

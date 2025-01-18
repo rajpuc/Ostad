@@ -150,6 +150,18 @@
 @media  (max-width: 640px){
 
 }
+@media  (max-width: 458px){
+    #allCrsesNavBtn img{
+        display: none;
+    }
+    .container {
+        padding-inline: 5px;
+    }
+  
+    .od-left-links-container, .ostad-left-nav-links, .gap-16, .od-right-links-container{
+        gap:4px;
+    } 
+}
 @media  (max-width: 400px){
 
 }

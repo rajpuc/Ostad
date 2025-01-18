@@ -77,6 +77,9 @@
     }
 }
 @media  (max-width: 767px){
+    .ostad-header {
+        overflow-x: hidden;
+    }
     #more{
         display: none;
     }
@@ -147,8 +150,12 @@
         height: 24px;
     }
 }
-@media  (max-width: 640px){
 
+
+@media  (max-width: 470px){
+    .container{
+        width: 100%;
+    }
 }
 @media  (max-width: 458px){
     #allCrsesNavBtn img{

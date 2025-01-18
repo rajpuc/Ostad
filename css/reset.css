@@ -87,6 +87,9 @@ li{
 img{
     width: 100%;
 }
+html,body{
+    width: 100%;
+}
 body{
     font-family: var(--font-regular); 
     background-color: var(--background-color);

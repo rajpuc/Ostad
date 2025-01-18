@@ -43,6 +43,9 @@
     }
 }
 @media  (max-width: 1023px){
+    .od-course-expand{
+        display: none;
+    }
     #left-nav-special, #od-language, .od-notification-wrapper{
         display: none;
     }
@@ -77,9 +80,6 @@
     }
 }
 @media  (max-width: 767px){
-    .ostad-header {
-        overflow-x: hidden;
-    }
     #more{
         display: none;
     }
